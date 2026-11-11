@@ -174,12 +174,19 @@
                     </div>
 
                     <!-- Experience -->
-                    <div class="lg:col-span-2 space-y-6">
+                        <div class="lg:col-span-2 space-y-6">
                         <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-gt-gold">
                             <h4 class="text-lg font-bold text-slate-900">CME NEXT Pro Engineering Intern</h4>
-                            <p class="text-sm font-medium text-slate-500 mb-3">CME Wire & Cable | Summer 2025</p>
+                            <p class="text-sm font-medium text-slate-500 mb-4">CME Wire & Cable | Summer 2026</p>
+                            
+                            <!-- INTERNSHIP IMAGE -->
+                            <img src="assets/internship-pic.jpg" alt="CME Wire and Cable Internship" class="w-full h-48 object-cover rounded-lg mb-4 shadow-sm">
+                            
+                            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                                During my time at CME Wire & Cable, I gained invaluable exposure to the realities of medium-voltage underground distribution and utility-scale power systems. I conducted extensive cable ampacity and sag simulations to ensure our products met strict environmental and electrical tolerances. 
+                            </p>
                             <p class="text-slate-600 text-sm leading-relaxed">
-                                Conducted cable ampacity and sag simulations, driving quality assurance data analysis that led to a $250,000 investment in QA procedures. Developed automated tools to streamline medium-voltage cable qualification data analysis.
+                                Beyond simulation, I developed automated tools using Python and Streamlit to streamline our medium-voltage cable qualification data analysis. My comprehensive data analysis and quality assurance reviews ultimately provided the justification for a $250,000 investment in new QA testing procedures.
                             </p>
                         </div>
                         
@@ -256,26 +263,39 @@
                             </div>
                             <span class="text-slate-500 text-sm font-medium bg-slate-100 px-3 py-1 rounded-full whitespace-nowrap">Jan – May 2026</span>
                         </div>
+                        
+                        <!-- PCB IMAGES GALLERY -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <img src="assets/pcb-front.jpg" alt="Test Bench PCB Front" class="w-full h-56 object-cover rounded-lg border border-slate-200 shadow-sm">
+                                <p class="text-xs text-center text-slate-500 mt-2">Custom PCB Layout (Front)</p>
+                            </div>
+                            <div>
+                                <img src="assets/pcb-back.jpg" alt="Test Bench PCB Back" class="w-full h-56 object-cover rounded-lg border border-slate-200 shadow-sm">
+                                <p class="text-xs text-center text-slate-500 mt-2">Custom PCB Layout (Back)</p>
+                            </div>
+                        </div>
+
                         <p class="text-slate-600 mb-6 leading-relaxed">
-                            A team-based academic project focused on engineering an automated hardware test-bench to facilitate data acquisition and signal processing. We synthesized a 24V AC/DC power supply to drive the system architecture.
+                            A team-based academic project focused on engineering an automated hardware test-bench to facilitate data acquisition and signal processing. Working alongside my teammate Zack in the Driftmier engineering labs, we synthesized a 24V AC/DC power supply to drive the entire system architecture. This project required us to move from breadboard prototyping to a fully printed and soldered PCB, ensuring clean traces and minimal signal interference.
                         </p>
                         <ul class="list-disc list-inside text-slate-600 space-y-2 mb-8 ml-2">
-                            <li>Developed a Raspberry Pi 4-based integrated test-bench designed for automated hardware characterization and real-time signal monitoring.</li>
-                            <li>Designed and integrated high-precision instrumentation modules, including a 5-bit SAR ADC, digital voltmeter, and ohmmeter, to support accurate data acquisition.</li>
-                            <li>Implemented modular Python software to automate hardware initialization and real-time control sequences on the Raspberry Pi.</li>
+                            <li>Developed a Raspberry Pi 4-based integrated test-bench designed for automated hardware characterization, featuring a custom-routed printed circuit board (PCB) to handle diverse signal loads.</li>
+                            <li>Designed and integrated high-precision instrumentation modules, including a discrete 5-bit SAR ADC, a digital voltmeter, an ohmmeter, a function generator, and a stable voltage source.</li>
+                            <li>Implemented modular Python software to automate hardware initialization, parse incoming sensor data, and execute real-time control sequences from the Raspberry Pi interface.</li>
                         </ul>
                         <div class="flex flex-wrap gap-4 border-t border-slate-100 pt-6">
-                            <!-- Update href="#" with the actual path to your PDFs in your assets folder -->
-                            <a href="assets/Group 8 Technical Document.pdf" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gt-navy text-white text-sm font-medium rounded-lg hover:bg-blue-900 transition-colors shadow-sm">
+                            <a href="assets/Technical_Document.pdf" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gt-navy text-white text-sm font-medium rounded-lg hover:bg-blue-900 transition-colors shadow-sm">
                                 <i class="fas fa-file-pdf"></i> Technical Document
                             </a>
-                            <a href="assets/User Manual - Group 8.pdf" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gt-navy border border-slate-300 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
+                            <a href="assets/How_To_Guide.pdf" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gt-navy border border-slate-300 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
                                 <i class="fas fa-book"></i> How-To Guide
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Project 2: MicroMouse IEEE -->
                 <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden mb-8 hover:shadow-md transition-shadow">
                     <div class="p-8 md:p-10">
                         <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-4">
@@ -286,12 +306,12 @@
                             <span class="text-slate-500 text-sm font-medium bg-slate-100 px-3 py-1 rounded-full whitespace-nowrap">Sep 2025 – Mar 2026</span>
                         </div>
                         <p class="text-slate-600 mb-6 leading-relaxed">
-                            A team-based robotics initiative focused on designing and programming an autonomous maze-solving robot. My focus was primarily on software architecture, sensor integration, and control systems.
+                            A team-based robotics initiative focused on designing and programming an autonomous maze-solving robot. My focus was primarily on software architecture, sensor integration, and control systems. This required tight optimization of firmware running on STM32 microcontrollers to ensure the robot could process environmental data rapidly enough to maintain momentum through the maze.
                         </p>
                         <ul class="list-disc list-inside text-slate-600 space-y-2 ml-2">
-                            <li>Engineered a 6-channel infrared sensor polling system using dual STM32 ADCs to facilitate obstacle navigation in real time and allow wall-following.</li>
-                            <li>Implemented a PID control algorithm based on differential error between front-inward sensors, enabling precise steering corrections and stable positioning throughout the maze.</li>
-                            <li>Managed the code repository using GitHub, collaborating with the team and performing code review with VS Code's integrated Git environment.</li>
+                            <li>Engineered a 6-channel infrared sensor polling system using dual STM32 ADCs to facilitate obstacle navigation in real time and allow consistent wall-following logic.</li>
+                            <li>Implemented a PID control algorithm based on differential error between front-inward sensors, enabling precise steering corrections and stable positioning throughout the maze at high speeds.</li>
+                            <li>Managed the code repository using GitHub, collaborating with the team and performing code review with VS Code's integrated Git environment to maintain a clean codebase.</li>
                         </ul>
                     </div>
                 </div>
