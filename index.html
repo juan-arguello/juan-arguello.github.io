@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Arguello | Digital Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Custom scrollbar for chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        /* Georgia Tech colors inspiration */
+        .bg-gt-navy { background-color: #232D4B; }
+        .text-gt-navy { color: #232D4B; }
+        .bg-gt-gold { background-color: #E5A823; }
+        .text-gt-gold { color: #E5A823; }
+        
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 w-full bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="flex-shrink-0 flex items-center gap-2">
+                        <span class="font-bold text-xl text-gt-navy tracking-tight">Juan Arguello</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-gt-navy font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-gt-navy font-medium transition-colors">About Me</a>
+                    <a href="#resume" class="text-slate-600 hover:text-gt-navy font-medium transition-colors">Resume</a>
+                    <a href="#goals" class="text-slate-600 hover:text-gt-navy font-medium transition-colors">Career Goals</a>
+                    <a href="#portfolio" class="text-slate-600 hover:text-gt-navy font-medium transition-colors">Technical Portfolio</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-slate-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">About Me</a>
+                <a href="#resume" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Resume</a>
+                <a href="#goals" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Career Goals</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Technical Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Home / Hero Section -->
+        <section id="home" class="pt-20 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-white to-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="w-full md:w-1/2 space-y-6">
+                        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold tracking-wide">
+                            Electrical Engineering Student @ GT
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                            Welcome to the Digital Portfolio of <span class="text-gt-navy">Juan Arguello</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            I am an Electrical Engineering student at the Georgia Institute of Technology, specializing in Circuit Technology and Electric Energy Systems. I am passionate about designing robust hardware solutions and optimizing power systems, bridging the gap between embedded intelligence and physical infrastructure.
+                        </p>
+                        <div class="pt-4 flex gap-4">
+                            <a href="#portfolio" class="px-6 py-3 bg-gt-navy text-white font-medium rounded-lg hover:bg-blue-900 transition-colors shadow-sm">View My Work</a>
+                            <a href="#resume" class="px-6 py-3 bg-white text-gt-navy border border-slate-300 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm">Resume</a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-gt-gold rounded-full blur opacity-25"></div>
+                            <img src="https://placehold.co/400x400/232D4B/FFFFFF?text=Juan+Arguello\nHeadshot" alt="Juan Arguello Headshot" class="relative rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">About Me</h2>
+                    <div class="w-20 h-1 bg-gt-gold mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="prose prose-lg text-slate-600 max-w-4xl mx-auto space-y-6">
+                    <p>
+                        My journey into electrical engineering is driven by a fascination with how raw electrical power is controlled, routed, and translated into intelligent action. I began my academic career at the University of Georgia, where I maintained a 3.65 GPA, earned HOPE Scholarship honors, and joined the IEEE MicroMouse embedded systems team to program STM32 microcontrollers in C. Seeking to dive deeper into hardware architecture and power systems, I transferred to Georgia Tech.
+                    </p>
+                    <p>
+                        At GT, I am pursuing academic threads in Circuit Technology and Electric Energy Systems. My coursework and extracurriculars reflect a hands-on approach to engineering. As a member of Silicon Jackets, I actively contribute to RISC-V CPU design using SystemVerilog and C++. Whether I am benchmarking neural networks on the GT ICE cluster or analyzing complex signal processing data with Python and MATLAB, I thrive in environments that challenge me to optimize and innovate.
+                    </p>
+                    <p>
+                        Outside the lab and the classroom, I believe in maintaining a strong balance between mental and physical discipline. I am an avid soccer player and a certified youth soccer referee. I also train in Brazilian jiu-jitsu and actively work on my golf game. Whether I’m reverse-searing a beef tenderloin in a cast-iron skillet or troubleshooting a circuit, I approach my passions with the same meticulous attention to detail.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">Resume & Experience</h2>
+                        <div class="w-20 h-1 bg-gt-navy mt-4 rounded-full"></div>
+                    </div>
+                    <button class="mt-6 md:mt-0 flex items-center gap-2 px-6 py-2.5 bg-gt-navy text-white font-medium rounded-lg hover:bg-blue-900 transition-colors shadow-sm">
+                        <i class="fas fa-file-download"></i> Download Full Resume
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Skills -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 h-full">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Core Skills</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">C/C++</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">Python</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">NumPy/Pandas</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">SystemVerilog</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">MATLAB</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">LaTeX</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">MicroPython</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">Embedded Systems</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-gt-gold">
+                            <h4 class="text-lg font-bold text-slate-900">CME NEXT Pro Engineering Intern</h4>
+                            <p class="text-sm font-medium text-slate-500 mb-3">CME Wire & Cable | Summer 2025</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Conducted cable ampacity and sag simulations, driving quality assurance data analysis that led to a $250,000 investment in QA procedures. Developed automated tools to streamline medium-voltage cable qualification data analysis.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-slate-300">
+                            <h4 class="text-lg font-bold text-slate-900">Supply Chain Analyst Intern</h4>
+                            <p class="text-sm font-medium text-slate-500 mb-3">OPTIMUS Distribution LLC | Summer 2024</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Analyzed technical specifications for spun concrete lighting and power line poles for major utility clients like Florida Power & Light, ensuring technical compliance and logistical efficiency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Goals Section -->
+        <section id="goals" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">Career Goals</h2>
+                    <div class="w-20 h-1 bg-gt-gold mx-auto mt-4 rounded-full"></div>
+                    <p class="mt-6 text-slate-600 max-w-2xl mx-auto text-lg">
+                        My aspiration is to become a lead hardware or power systems engineer, designing and integrating scalable electrical infrastructure for major industrial and utility applications.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 relative">
+                    <!-- Connector line for desktop -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 transform -translate-y-1/2"></div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 relative z-10 flex flex-col h-full transform transition hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-inner">1</div>
+                        <h3 class="text-xl font-bold text-center text-slate-900 mb-4">Short-Term (1-2 Years)</h3>
+                        <p class="text-slate-600 text-sm text-center">
+                            Complete core ECE sequence (ECE 2026, ECE 1100). Secure a summer engineering internship with an industry leader to gain direct field and design experience. Expand embedded skills through Silicon Jackets.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 relative z-10 flex flex-col h-full transform transition hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gt-gold text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-inner">2</div>
+                        <h3 class="text-xl font-bold text-center text-slate-900 mb-4">Mid-Term (2-4 Years)</h3>
+                        <p class="text-slate-600 text-sm text-center">
+                            Graduate from Georgia Tech. Transition into a full-time engineering role focused on power systems or analog circuit design. Begin the process of obtaining my Professional Engineer (PE) license by passing the FE exam.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 relative z-10 flex flex-col h-full transform transition hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gt-navy text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-inner">3</div>
+                        <h3 class="text-xl font-bold text-center text-slate-900 mb-4">Long-Term (5+ Years)</h3>
+                        <p class="text-slate-600 text-sm text-center">
+                            Transition into technical leadership, managing large-scale hardware integration projects or utility-scale power systems. Mentor junior engineers and potentially pursue a master's degree or MBA.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Portfolio Section -->
+        <section id="portfolio" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <span class="text-gt-gold font-semibold tracking-wider uppercase text-sm">Discovery Project Feature</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-2">Technical Portfolio</h2>
+                    <div class="w-20 h-1 bg-gt-navy mt-4 rounded-full"></div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">3D Motion Tracking with the Raspberry Pi Pico IMU</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                            <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                                <img src="https://placehold.co/600x400/eeeeee/999999?text=Hardware+Setup\n(Raspberry+Pi+Pico+Enclosure)" alt="Hardware Setup" class="w-full h-auto object-cover">
+                                <div class="p-3 bg-white text-xs text-slate-500 text-center border-t border-slate-200">Fig 1: Custom 3D-printed enclosure housing the Pico and MPU-6050</div>
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                                <img src="https://placehold.co/600x400/eeeeee/999999?text=Matplotlib+Visualization\n(3D+Orientation+Data)" alt="Matplotlib UI" class="w-full h-auto object-cover">
+                                <div class="p-3 bg-white text-xs text-slate-500 text-center border-t border-slate-200">Fig 2: Real-time 3D Matplotlib render mapping physical orientation</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8 text-slate-600">
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><i class="fas fa-exclamation-circle text-gt-gold"></i> The Problem</h4>
+                                <p class="leading-relaxed">
+                                    In modern embedded systems, the ability to accurately track, process, and visualize physical orientation in real-time is foundational to everything from consumer electronics to autonomous robotics. For my ECE 1100 Individual Discovery Project, I set out to bridge the gap between raw hardware sensor data and high-level software visualization. The objective was to build a self-contained, low-cost Inertial Measurement Unit (IMU) motion tracker capable of continuously calculating its orientation in physical space and transmitting that data to a computer to render a live, 3D graphical model of the device's movements.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><i class="fas fa-cogs text-slate-400"></i> The Process</h4>
+                                <p class="leading-relaxed mb-3">
+                                    The hardware foundation relied on a Raspberry Pi Pico microcontroller interfaced with an MPU-6050 sensor, which contains both a 3-axis accelerometer and a 3-axis gyroscope. I designed and utilized a custom 3D-printed enclosure to secure the components during physical testing.
+                                </p>
+                                <p class="leading-relaxed">
+                                    On the software side, I utilized MicroPython to establish an I2C communication protocol. The microcontroller read raw analog data, applied digital filtering to stabilize noise, and calculated pitch, roll, and yaw. This processed data was packaged and transmitted over a serial connection. To visualize this, I wrote a Python script utilizing Matplotlib that ingested the serial data stream and dynamically updated a 3D coordinate plane.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> The Outcome</h4>
+                                <p class="leading-relaxed">
+                                    The final result was a highly responsive, fully functional 3D motion tracking system. This project served as a comprehensive exercise in end-to-end electrical engineering, successfully navigating hardware-software integration, serial communication protocols, sensor noise filtering, and data visualization. This foundational architecture can scale to more complex embedded robotics projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="font-bold text-xl tracking-tight">Juan Arguello</span>
+                <p class="text-slate-400 text-sm mt-2">Electrical Engineering Portfolio • Georgia Tech</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gt-gold transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gt-gold transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gt-gold transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gemini AI Chatbot Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        <!-- Chat Window (Hidden by default) -->
+        <div id="chat-window" class="hidden mb-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col transition-all duration-300 origin-bottom-right" style="height: 500px; max-height: 80vh;">
+            <!-- Chat Header -->
+            <div class="bg-gt-navy text-white p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <i class="fas fa-robot text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Juan's AI Assistant</h4>
+                        <p class="text-xs text-blue-200">Powered by Gemini</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Chat Messages Area -->
+            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto chat-scroll flex flex-col gap-4 bg-slate-50">
+                <!-- Welcome Message -->
+                <div class="flex gap-2">
+                    <div class="w-6 h-6 rounded-full bg-gt-navy text-white flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-robot text-xs"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700">
+                        Hi! I'm Juan's virtual assistant. I can answer questions about his portfolio, resume, or engineering projects. What would you like to know?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="p-3 bg-white border-t border-slate-200">
+                <form id="chat-form" class="flex gap-2 relative">
+                    <input type="text" id="chat-input" placeholder="Ask a question..." class="w-full pl-4 pr-10 py-2 bg-slate-100 border-transparent rounded-full text-sm focus:border-gt-navy focus:bg-white focus:ring-0 outline-none transition-colors" autocomplete="off">
+                    <button type="submit" class="absolute right-1 top-1 bottom-1 w-8 flex items-center justify-center text-gt-navy hover:text-blue-700 rounded-full focus:outline-none">
+                        <i class="fas fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Floating Action Button -->
+        <button id="chat-toggle" class="w-14 h-14 bg-gt-navy text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-900 transition-transform hover:scale-105 focus:outline-none group relative">
+            <i class="fas fa-comment-dots text-2xl group-hover:hidden"></i>
+            <i class="fas fa-chevron-down text-xl hidden group-hover:block"></i>
+            <!-- Notification ping -->
+            <span class="absolute top-0 right-0 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gt-gold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-gt-gold"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- JavaScript functionality -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Chatbot Logic ---
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Toggle visibility
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                chatInput.focus();
+                // Hide ping on first open
+                const ping = chatToggle.querySelector('.absolute.top-0');
+                if(ping) ping.style.display = 'none';
+            }
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatWindow.classList.add('hidden');
+        });
+
+        // Add message to UI
+        function appendMessage(text, sender) {
+            const wrapper = document.createElement('div');
+            wrapper.className = `flex gap-2 ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+            
+            let iconHtml = '';
+            if(sender === 'bot') {
+                iconHtml = `
+                <div class="w-6 h-6 rounded-full bg-gt-navy text-white flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-robot text-xs"></i>
+                </div>`;
+            }
+
+            let bubbleClass = sender === 'user' 
+                ? 'bg-gt-navy text-white rounded-tr-none' 
+                : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none';
+
+            wrapper.innerHTML = `
+                ${iconHtml}
+                <div class="p-3 rounded-2xl shadow-sm text-sm break-words max-w-[85%] ${bubbleClass}">
+                    ${text}
+                </div>
+            `;
+            
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            const wrapper = document.createElement('div');
+            wrapper.id = 'typing-indicator';
+            wrapper.className = 'flex gap-2';
+            wrapper.innerHTML = `
+                <div class="w-6 h-6 rounded-full bg-gt-navy text-white flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-robot text-xs"></i>
+                </div>
+                <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none shadow-sm flex items-center">
+                    <div class="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        // Gemini API Configuration
+        const apiKey = ""; // API key populated by the environment
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+        
+        // System instruction to guide the AI
+        const systemInstruction = `
+        You are a virtual assistant for Juan Arguello, an Electrical Engineering student at Georgia Tech.
+        Base all your answers on his portfolio content:
+        - He specializes in Circuit Technology and Electric Energy Systems.
+        - Transferred from Univ of Georgia (3.65 GPA, IEEE MicroMouse).
+        - Involved in Silicon Jackets at GT (RISC-V CPU design using SystemVerilog and C++).
+        - Plays soccer, refs youth soccer, trains BJJ, plays golf.
+        - Internships: CME NEXT Pro Intern (CME Wire & Cable - cable ampacity, automation), Supply Chain Analyst (OPTIMUS Distribution).
+        - Skills: C/C++, Python, SystemVerilog, MATLAB, LaTeX, MicroPython.
+        - Goals: Lead hardware/power systems engineer, PE license, potentially MBA/Master's.
+        - Major Project: 3D Motion Tracking with Raspberry Pi Pico IMU (MicroPython, MPU-6050, Matplotlib).
+        Be professional, concise, and helpful. Do not make up information outside of his professional profile.
+        `;
+
+        // Conversation history to maintain context
+        let chatHistory = [];
+
+        // Handle form submission
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const messageText = chatInput.value.trim();
+            if (!messageText) return;
+
+            // Clear input and append user message
+            chatInput.value = '';
+            appendMessage(messageText, 'user');
+            
+            // Add user message to history
+            chatHistory.push({ role: 'user', parts: [{ text: messageText }] });
+            
+            showTypingIndicator();
+
+            try {
+                // Construct API payload
+                const payload = {
+                    contents: chatHistory,
+                    systemInstruction: {
+                        parts: [{ text: systemInstruction }]
+                    }
+                };
+
+                // Make API call with exponential backoff logic (simplified for single attempt here, 
+                // but robust enough for frontend demo)
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                removeTypingIndicator();
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                
+                if (data.candidates && data.candidates.length > 0) {
+                    const botReply = data.candidates[0].content.parts[0].text;
+                    appendMessage(botReply, 'bot');
+                    // Add bot response to history
+                    chatHistory.push({ role: 'model', parts: [{ text: botReply }] });
+                } else {
+                    appendMessage("I'm sorry, I couldn't process that response. Please try asking again.", 'bot');
+                }
+
+            } catch (error) {
+                removeTypingIndicator();
+                console.error("Gemini API Error:", error);
+                appendMessage("Sorry, I'm having trouble connecting right now. Please try again later.", 'bot');
+                // Remove failed user message from history to prevent context errors on retry
+                chatHistory.pop(); 
+            }
+        });
+
+    </script>
+</body>
+</html>
